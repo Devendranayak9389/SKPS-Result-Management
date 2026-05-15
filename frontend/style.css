@@ -22,3 +22,19 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
 }
+#printable-area{
+  width: 190mm;
+  min-height: 277mm;
+  margin:auto;
+  background:white;
+}
+.marksheet {
+ width: 100%;
+ max-width: 750px;
+ margin: auto;
+ background: white;
+ padding: 25px;
+ border: 12px double var(--primary);
+ box-sizing: border-box;
+ overflow: hidden;
+}
