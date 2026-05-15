@@ -156,16 +156,52 @@ async function fetchResult() {
 }
 
 function downloadPDF() {
-  const element = document.getElementById('printable-area');
-  const roll = document.getElementById("mRoll").innerText;
+
+  const element =
+      document.getElementById('printable-area');
+
+  const roll =
+      document.getElementById("mRoll").innerText;
+
   const opt = {
-    margin: 0.5,
-    filename: `SKPS_Marksheet_${roll}.pdf`,
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+
+    margin: 5,
+
+    filename:
+      `SKPS_Marksheet_${roll}.pdf`,
+
+    image: {
+      type: 'jpeg',
+      quality: 1
+    },
+
+    html2canvas: {
+
+      scale: 4,
+
+      useCORS: true,
+
+      scrollY: 0
+    },
+
+    jsPDF: {
+
+      unit: 'mm',
+
+      format: 'a4',
+
+      orientation: 'portrait'
+    },
+
+    pagebreak: {
+      mode: ['avoid-all']
+    }
   };
-  html2pdf().set(opt).from(element).save();
+
+  html2pdf()
+    .set(opt)
+    .from(element)
+    .save();
 }
 </script>
 </body>
